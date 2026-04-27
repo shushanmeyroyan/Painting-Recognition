@@ -1,23 +1,88 @@
-.DS_Store
+# Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
-.pytest_cache/
-.venv/
-venv/
+*.py[codz]
+*$py.class
+*.so
 
-# Large local datasets and generated image folders
+# macOS and editor files
+.DS_Store
+.idea/
+.vscode/
+tempCodeRunnerFile.py
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+*.manifest
+*.spec
+
+# Test, lint, and type-check caches
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py.cover
+.hypothesis/
+.pytest_cache/
+cover/
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyre/
+.pytype/
+.ruff_cache/
+
+# Environments and local config
+.env
+.envrc
+.venv/
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+__pypackages__/
+.pdm-python
+.pdm-build/
+.pixi/
+.pypirc
+.streamlit/secrets.toml
+
+# Notebook checkpoints
+.ipynb_checkpoints/
+
+# Project-specific large local datasets and generated image folders
 data/datasets/
 data/model_cache/
 data/processed_images/
 data/user_uploads/
 preprocessing_output/
 
-# Local databases and temporary/debug files
+# Project-specific local databases and temporary/debug files
 data/*.db
 data/recognition_debug_log.jsonl
 data/last_streamlit_error.log
 real_image_test_output.png
 synthetic_test_output.png
-
-# Notebook checkpoints
-.ipynb_checkpoints/
