@@ -1,0 +1,210 @@
+filename,title,artist,year,predicted_style,predicted_style_confidence,processed_image_path
+ivan-aivazovsky-sea-coast-at-night-near-the-beacon.jpg!PinterestSmall.jpg,Sea Coast at night near the Beacon,Ivan Aivazovsky,1837,Realism,0.43098533153533936,data/processed_images/armenian_local/ivan-aivazovsky-sea-coast-at-night-near-the-beacon.jpg!PinterestSmall.jpg
+kerch-1839.jpg!PinterestSmall.jpg,Kerch,Ivan Aivazovsky,1839,Impressionism,0.4169912040233612,data/processed_images/armenian_local/kerch-1839.jpg!PinterestSmall.jpg
+portrait-of-vice-admiral-m-p-lazarev-1839.jpg!PinterestSmall.jpg,Portrait of vice Admiral M.P. Lazarev,Ivan Aivazovsky,1839,Romanticism,0.7565898895263672,data/processed_images/armenian_local/portrait-of-vice-admiral-m-p-lazarev-1839.jpg!PinterestSmall.jpg
+odessa-1840.jpg!PinterestSmall.jpg,Odessa,Ivan Aivazovsky,1840,Romanticism,0.6020115613937378,data/processed_images/armenian_local/odessa-1840.jpg!PinterestSmall.jpg
+the-bay-of-naples-at-moonlit-night-vesuvius-1840.jpg!PinterestSmall.jpg,The Bay of Naples at moonlit night. Vesuvius,Ivan Aivazovsky,1840,Romanticism,0.9499557614326477,data/processed_images/armenian_local/the-bay-of-naples-at-moonlit-night-vesuvius-1840.jpg!PinterestSmall.jpg
+lunar-night-on-capri-1841.jpg!PinterestSmall.jpg,Lunar night on Capri,Ivan Aivazovsky,1841,Realism,0.4075663983821869,data/processed_images/armenian_local/lunar-night-on-capri-1841.jpg!PinterestSmall.jpg
+th.jpg!PinterestSmall.jpg,Chaos (The Creation),Ivan Aivazovsky,1841,Realism,0.30333107709884644,data/processed_images/armenian_local/th.jpg!PinterestSmall.jpg
+boat-ride-by-kumkapi-in-constantinople-1846.jpg!PinterestSmall.jpg,Kumpaki boat ride in Constantinople,Ivan Aivazovsky,1846,Romanticism,0.6095725297927856,data/processed_images/armenian_local/boat-ride-by-kumkapi-in-constantinople-1846.jpg!PinterestSmall.jpg
+battle-of-cesme-at-night-1848.jpg!PinterestSmall.jpg,Battle of Cesme at night,Ivan Aivazovsky,1848,Romanticism,0.3219135105609894,data/processed_images/armenian_local/battle-of-cesme-at-night-1848.jpg!PinterestSmall.jpg
+battle-of-chios-on-24-june-1770-1848.jpg!PinterestSmall.jpg,Battle of Chios on 24 June 1770,Ivan Aivazovsky,1848,Romanticism,0.45387551188468933,data/processed_images/armenian_local/battle-of-chios-on-24-june-1770-1848.jpg!PinterestSmall.jpg
+portrait-of-i-lazarev-1851.jpg!PinterestSmall.jpg,Portrait of I. Lazarev,Ivan Aivazovsky,1851,Romanticism,0.4538309574127197,data/processed_images/armenian_local/portrait-of-i-lazarev-1851.jpg!PinterestSmall.jpg
+view-of-constantinople-1851.jpg!PinterestSmall.jpg,View of Constantinople,Ivan Aivazovsky,1851,Realism,0.4255872070789337,data/processed_images/armenian_local/view-of-constantinople-1851.jpg!PinterestSmall.jpg
+sunset-over-the-golden-horn-1866.jpg!PinterestSmall.jpg,Sunset over the Golden Horn,Ivan Aivazovsky,1866,Romanticism,0.7874102592468262,data/processed_images/armenian_local/sunset-over-the-golden-horn-1866.jpg!PinterestSmall.jpg
+icebergs-in-the-atlantic-1870.jpg!PinterestSmall.jpg,Icebergs in the Atlantic,Ivan Aivazovsky,1870,Romanticism,0.38054195046424866,data/processed_images/armenian_local/icebergs-in-the-atlantic-1870.jpg!PinterestSmall.jpg
+st-petersburg-the-ferry-across-the-river-1870.jpg!PinterestSmall.jpg,St. Petersburg. The ferry across the river,Ivan Aivazovsky,1870,Realism,0.27333950996398926,data/processed_images/armenian_local/st-petersburg-the-ferry-across-the-river-1870.jpg!PinterestSmall.jpg
+caravan-in-the-oasis-egypt-1871.jpg!PinterestSmall.jpg,Caravan in the oasis. Egypt,Ivan Aivazovsky,1871,Realism,0.3467169404029846,data/processed_images/armenian_local/caravan-in-the-oasis-egypt-1871.jpg!PinterestSmall.jpg
+pushkin-s-farewell-to-the-black-sea-1877.jpg!PinterestSmall.jpg,Pushkin's farewell to the Black Sea,Ivan Aivazovsky,1877,Realism,0.5874328017234802,data/processed_images/armenian_local/pushkin-s-farewell-to-the-black-sea-1877.jpg!PinterestSmall.jpg
+self-portrait-1909-1.jpg!PinterestSmall.jpg,Self-portrait,Martiros Sarian,1909,Expressionism,0.9002495408058167,data/processed_images/armenian_local/self-portrait-1909-1.jpg!PinterestSmall.jpg
+persian-woman-1910.jpg!PinterestSmall.jpg,Persian woman,Martiros Sarian,1910,Expressionism,0.7407968044281006,data/processed_images/armenian_local/persian-woman-1910.jpg!PinterestSmall.jpg
+portrait-of-the-poet-yeghishe-charents-1923.jpg!PinterestSmall.jpg,Portrait of the poet Yeghishe Charents,Martiros Sarian,1923,Expressionism,0.8420032262802124,data/processed_images/armenian_local/portrait-of-the-poet-yeghishe-charents-1923.jpg!PinterestSmall.jpg
+may-roses-1939.jpg!PinterestSmall.jpg,May roses,Martiros Sarian,1939,Realism,0.5039233565330505,data/processed_images/armenian_local/may-roses-1939.jpg!PinterestSmall.jpg
+apricot-tree-in-blossom-1942.jpg!PinterestSmall.jpg,Apricot tree in blossom,Martiros Sarian,1942,Post_Impressionism,0.6482217311859131,data/processed_images/armenian_local/apricot-tree-in-blossom-1942.jpg!PinterestSmall.jpg
+wild-poppies-1945.jpg!PinterestSmall.jpg,Wild poppies,Martiros Sarian,1945,Realism,0.21866393089294434,data/processed_images/armenian_local/wild-poppies-1945.jpg!PinterestSmall.jpg
+dvin-excavations-1952.jpg!PinterestSmall.jpg,Dvin excavations,Martiros Sarian,1952,Naive_Art_Primitivism,0.2903510332107544,data/processed_images/armenian_local/dvin-excavations-1952.jpg!PinterestSmall.jpg
+still-life-1953.jpg!PinterestSmall.jpg,Still life,Martiros Sarian,1953,Post_Impressionism,0.5741574168205261,data/processed_images/armenian_local/still-life-1953.jpg!PinterestSmall.jpg
+sevan-lake-1953.jpg!PinterestSmall.jpg,Sevan Lake,Martiros Sarian,1953,Post_Impressionism,0.6176064014434814,data/processed_images/armenian_local/sevan-lake-1953.jpg!PinterestSmall.jpg
+church-karmravor-of-vii-century-1956.jpg!PinterestSmall.jpg,Church Karmravor of vii century,Martiros Sarian,1956,Post_Impressionism,0.4703558385372162,data/processed_images/armenian_local/church-karmravor-of-vii-century-1956.jpg!PinterestSmall.jpg
+village-ashnak-1957.jpg!PinterestSmall.jpg,Village Ashnak,Martiros Sarian,1957,Post_Impressionism,0.676217257976532,data/processed_images/armenian_local/village-ashnak-1957.jpg!PinterestSmall.jpg
+ararat-and-arch-charents-1958.jpg!PinterestSmall.jpg,Ararat and arch Charents,Martiros Sarian,1958,Abstract_Expressionism,0.16704830527305603,data/processed_images/armenian_local/ararat-and-arch-charents-1958.jpg!PinterestSmall.jpg
+flowers-in-the-workshop-1958.jpg!PinterestSmall.jpg,Flowers in the workshop,Martiros Sarian,1958,Post_Impressionism,0.6626105308532715,data/processed_images/armenian_local/flowers-in-the-workshop-1958.jpg!PinterestSmall.jpg
+portrait-of-catholicos-of-all-armenians-vazgen-i-1959.jpg!PinterestSmall.jpg,Portrait of Catholicos of All Armenians Vazgen I ,Martiros Sarian,1959,Northern_Renaissance,0.23287516832351685,data/processed_images/armenian_local/portrait-of-catholicos-of-all-armenians-vazgen-i-1959.jpg!PinterestSmall.jpg
+portrait-of-mathematics-artashes-shahinyan-1960.jpg!PinterestSmall.jpg,Portrait of mathematics Artashes Shahinyan,Martiros Sarian,1960,Expressionism,0.7709871530532837,data/processed_images/armenian_local/portrait-of-mathematics-artashes-shahinyan-1960.jpg!PinterestSmall.jpg
+landscape-shirak-1962.jpg!PinterestSmall.jpg,Landscape Shirak,Martiros Sarian,1962,Post_Impressionism,0.8139156103134155,data/processed_images/armenian_local/landscape-shirak-1962.jpg!PinterestSmall.jpg
+portrait-of-katarine-saryan-1963.jpg!PinterestSmall.jpg,Portrait of Katarine Ssaryan,Martiros Sarian,1963,Post_Impressionism,0.4791446626186371,data/processed_images/armenian_local/portrait-of-katarine-saryan-1963.jpg!PinterestSmall.jpg
+"minas-avetisyan-houses-in-a-rural-landscape,-jajur,-armenia.jpg","Houses in a rural landscape, Jajur, Armenia",Minas Avetisyan,1960–1970,Impressionism,0.627839982509613,"data/processed_images/armenian_local/minas-avetisyan-houses-in-a-rural-landscape,-jajur,-armenia.jpg"
+minas-avetisyan-beating-butter.jpg,Beating butter,Minas Avetisyan,1972,Impressionism,0.45391789078712463,data/processed_images/armenian_local/minas-avetisyan-beating-butter.jpg
+minas-avetisyan-baking-bread.jpg,Baking bread,Minas Avetisyan,1972,Post_Impressionism,0.5193384289741516,data/processed_images/armenian_local/minas-avetisyan-baking-bread.jpg
+"minas-avetisyan-red-wine,-1962.jpg",Red wine,Minas Avetisyan,1962,Post_Impressionism,0.49042248725891113,"data/processed_images/armenian_local/minas-avetisyan-red-wine,-1962.jpg"
+mother-s-portrait-1964.jpg!PinterestSmall.jpg,Mother's portrait,Minas Avetisyan,1964,Post_Impressionism,0.6141161322593689,data/processed_images/armenian_local/mother-s-portrait-1964.jpg!PinterestSmall.jpg
+40441-b.jpg!PinterestSmall.jpg,Philosopher,Minas Avetisyan,1960,Expressionism,0.4708598256111145,data/processed_images/armenian_local/40441-b.jpg!PinterestSmall.jpg
+89670-b.jpg!PinterestSmall.jpg,Memory,Minas Avetisyan,1973,Post_Impressionism,0.47573012113571167,data/processed_images/armenian_local/89670-b.jpg!PinterestSmall.jpg
+40216-b.jpg!PinterestSmall.jpg,Master Gevorg,Minas Avetisyan,1967-1970,Cubism,0.8029422163963318,data/processed_images/armenian_local/40216-b.jpg!PinterestSmall.jpg
+meditation-my-family-1973.jpg!PinterestSmall.jpg,Meditation. My Family,Minas Avetisyan,1973,Expressionism,0.8229739665985107,data/processed_images/armenian_local/meditation-my-family-1973.jpg!PinterestSmall.jpg
+40312-b.jpg!PinterestSmall.jpg,The resting one,Minas Avetisyan,1973,Abstract_Expressionism,0.727185070514679,data/processed_images/armenian_local/40312-b.jpg!PinterestSmall.jpg
+21469-b.jpg!PinterestSmall.jpg,Valya,Minas Avetisyan,Unkown,Expressionism,0.6771405935287476,data/processed_images/armenian_local/21469-b.jpg!PinterestSmall.jpg
+21458-b.jpg!PinterestSmall.jpg,Still-life with grapes,Minas Avetisyan,Unkown,Expressionism,0.28166940808296204,data/processed_images/armenian_local/21458-b.jpg!PinterestSmall.jpg
+60562a87edc2c958901b8136.jpg!PinterestSmall.jpg,Waiting,Minas Avetisyan,Unkown,Expressionism,0.7004536986351013,data/processed_images/armenian_local/60562a87edc2c958901b8136.jpg!PinterestSmall.jpg
+60562946edc2c9589010c29d.jpg!PinterestSmall.jpg,Crucufication,Minas Avetisyan,Unkown,Expressionism,0.8896939754486084,data/processed_images/armenian_local/60562946edc2c9589010c29d.jpg!PinterestSmall.jpg
+minas-avetisyan-parenthood.jpg,Parenthood,Minas Avetisyan,1964,Expressionism,0.5626567006111145,data/processed_images/armenian_local/minas-avetisyan-parenthood.jpg
+minas-avetisyan-portrait-of-a-girl.jpg,Portrait of a girl,Minas Avetisyan,1963,Expressionism,0.6101901531219482,data/processed_images/armenian_local/minas-avetisyan-portrait-of-a-girl.jpg
+minas-avetisyan-three-figures.jpg,Three figures,Minas Avetisyan,Unkown,Expressionism,0.9243109226226807,data/processed_images/armenian_local/minas-avetisyan-three-figures.jpg
+untitled-self-portrait.jpg!PinterestSmall.jpg,Untitled (Self-Portrait),Arshile Gorky,1928-1929,Expressionism,0.7542331218719482,data/processed_images/armenian_local/untitled-self-portrait.jpg!PinterestSmall.jpg
+nighttime-enigma-and-nostalgia.jpg!PinterestSmall.jpg,Nighttime Enigma and Nostalgia,Arshile Gorky,1931-1932,Expressionism,0.7987897396087646,data/processed_images/armenian_local/nighttime-enigma-and-nostalgia.jpg!PinterestSmall.jpg
+the-artist-with-his-mother-1936.jpg!PinterestSmall.jpg,The Artist and His Mother,Arshile Gorky,1926-1936,Post_Impressionism,0.633094310760498,data/processed_images/armenian_local/the-artist-with-his-mother-1936.jpg!PinterestSmall.jpg
+5ea96fffedc2c90aa860665c.png!PinterestSmall.png.jpeg,Portrait of Vartoosh,Arshile Gorky,1936-1937,Expressionism,0.3460470139980316,data/processed_images/armenian_local/5ea96fffedc2c90aa860665c.png!PinterestSmall.png.jpg
+park-street-church.jpg!PinterestSmall.jpg,Park Street Church,Arshile Gorky,1924,Impressionism,0.6591567993164062,data/processed_images/armenian_local/park-street-church.jpg!PinterestSmall.jpg
+bound-in-sleep.jpg!PinterestSmall.jpg,Bound in Sleep,Arshile Gorky,1925,Cubism,0.8114091753959656,data/processed_images/armenian_local/bound-in-sleep.jpg!PinterestSmall.jpg
+the-barber-composition-no-5.jpg!PinterestSmall.jpg,The Barber (Composition No.5),Arshile Gorky,1933,Cubism,0.8757596015930176,data/processed_images/armenian_local/the-barber-composition-no-5.jpg!PinterestSmall.jpg
+the-artists-s-mother.jpg!PinterestSmall.jpg,The Artists's Mother,Arshile Gorky,1936,Romanticism,0.31319451332092285,data/processed_images/armenian_local/the-artists-s-mother.jpg!PinterestSmall.jpg
+hitler-invades-poland.jpg!PinterestSmall.jpg,Hitler Invades Poland,Arshile Gorky,1939,Abstract_Expressionism,0.92282634973526,data/processed_images/armenian_local/hitler-invades-poland.jpg!PinterestSmall.jpg
+portrait-of-azadoohi-liberty-miller.jpg!PinterestSmall.jpg,Portrait of Azadoohi (Liberty Miller),Arshile Gorky,1926,Expressionism,0.6345833539962769,data/processed_images/armenian_local/portrait-of-azadoohi-liberty-miller.jpg!PinterestSmall.jpg
+staten-island.jpg!PinterestSmall.jpg,Staten Island,Arshile Gorky,1927,Post_Impressionism,0.5434020757675171,data/processed_images/armenian_local/staten-island.jpg!PinterestSmall.jpg
+pears-peaches-and-pitcher-1927.jpg!PinterestSmall.jpg,Pears Peaches and Pitcher,Arshile Gorky,1926-1927,Post_Impressionism,0.6663324236869812,data/processed_images/armenian_local/pears-peaches-and-pitcher-1927.jpg!PinterestSmall.jpg
+still-life-with-skull.jpg!PinterestSmall.jpg,Still Life with Skull,Arshile Gorky,1927,Expressionism,0.8786106109619141,data/processed_images/armenian_local/still-life-with-skull.jpg!PinterestSmall.jpg
+portrait-of-a-woman.jpg!PinterestSmall.jpg,Portrait of a woman,Arshile Gorky,1928,Expressionism,0.843630850315094,data/processed_images/armenian_local/portrait-of-a-woman.jpg!PinterestSmall.jpg
+self-portrait-at-the-age-of-nine.jpg!PinterestSmall.jpg,Self-portrait at the age of nine,Arshile Gorky,1928,Expressionism,0.7117615342140198,data/processed_images/armenian_local/self-portrait-at-the-age-of-nine.jpg!PinterestSmall.jpg
+469d48130b1460723c524bf8f7f24bff.jpg!PinterestSmall.jpg,Aviation: Evolution of Forms under Aerodynamic Limitations,Arshile Gorky,1937,Pop_Art,0.7666910290718079,data/processed_images/armenian_local/469d48130b1460723c524bf8f7f24bff.jpg!PinterestSmall.jpg
+afternoon-sun-1919.jpg,"Afternoon sun, 1919",Gevorg Bashinjaghian,1919,Impressionism,0.47907692193984985,data/processed_images/armenian_local/afternoon-sun-1919.jpg
+aurora-at-the-edge-of-a-river.jpg,Aurora at the edge of a river,Gevorg Bashinjaghian,1883,Romanticism,0.9445843696594238,data/processed_images/armenian_local/aurora-at-the-edge-of-a-river.jpg
+cornfield-in-an-open-armenian.jpg,Cornfield in an open Armenian,Gevorg Bashinjaghian,1921,Impressionism,0.5814211964607239,data/processed_images/armenian_local/cornfield-in-an-open-armenian.jpg
+fall-landscape-with-figure-19.jpg,Fall Landscape with Figure,Gevorg Bashinjaghian,1900,Impressionism,0.43912383913993835,data/processed_images/armenian_local/fall-landscape-with-figure-19.jpg
+farmyard-scene.jpg,Farmyard Scene,Gevorg Bashinjaghian,,Impressionism,0.8024435639381409,data/processed_images/armenian_local/farmyard-scene.jpg
+house-on-the-lake-1923.jpg,House on the Lake,Gevorg Bashinjaghian,1923,Impressionism,0.501925528049469,data/processed_images/armenian_local/house-on-the-lake-1923.jpg
+lake-sevan-by-night-1910.jpg,Lake Sevan by Night,Gevorg Bashinjaghian,1910,Romanticism,0.5599386096000671,data/processed_images/armenian_local/lake-sevan-by-night-1910.jpg
+leo-tolstoy-in-a-bright-field.jpg,Leo Tolstoy in a Bright Field,Gevorg Bashinjaghian,,Realism,0.6565349698066711,data/processed_images/armenian_local/leo-tolstoy-in-a-bright-field.jpg
+moonlit-river-bank-1896.jpg,Moonlit river bank,Gevorg Bashinjaghian,1896,Realism,0.41559380292892456,data/processed_images/armenian_local/moonlit-river-bank-1896.jpg
+mountain-landscape-with-horses.jpg,Mountain Landscape with Horses,Gevorg Bashinjaghian,1916,Realism,0.8493176698684692,data/processed_images/armenian_local/mountain-landscape-with-horses.jpg
+night-in-manglisi-1924.jpg,Night in Manglisi,Gevorg Bashinjaghian,1924,Impressionism,0.6125096678733826,data/processed_images/armenian_local/night-in-manglisi-1924.jpg
+our-lady-cathedral-of-ani-190.jpg,Our Lady Cathedral of Ani,Gevorg Bashinjaghian,1900,Realism,0.3418915569782257,data/processed_images/armenian_local/our-lady-cathedral-of-ani-190.jpg
+walk-in-the-countryside-1917_Nam4CED.jpg,Walk in the Countryside,Gevorg Bashinjaghian,1917,Impressionism,0.8546983599662781,data/processed_images/armenian_local/walk-in-the-countryside-1917_Nam4CED.jpg
+view-of-mount-ararat-1921.jpg,View of Mount Ararat,Gevorg Bashinjaghian,1921,Impressionism,0.4979512393474579,data/processed_images/armenian_local/view-of-mount-ararat-1921.jpg
+the-road-to-ararat-1897.jpg,The road to Ararat,Gevorg Bashinjaghian,1897,Romanticism,0.8763518333435059,data/processed_images/armenian_local/the-road-to-ararat-1897.jpg
+still-life-painting-1916.jpg,Still-life painting,Gevorg Bashinjaghian,1916,Impressionism,0.34701770544052124,data/processed_images/armenian_local/still-life-painting-1916.jpg
+sevan-1911.jpg,Sevan,Gevorg Bashinjaghian,1911,Romanticism,0.6456568837165833,data/processed_images/armenian_local/sevan-1911.jpg
+at_hrazdan_bridge_1923_gabriel_gyurjian.JPG,At Hrazdan Bridge,Gabriel Gyurjian,1923,Post_Impressionism,0.5355332493782043,data/processed_images/armenian_local/at_hrazdan_bridge_1923_gabriel_gyurjian.jpg
+rocks_of_sevan_1926_gabriel_gyurjian.JPG,Rocks of Sevan,Gabriel Gyurjian,1926,Impressionism,0.724651575088501,data/processed_images/armenian_local/rocks_of_sevan_1926_gabriel_gyurjian.jpg
+"tsaghkadzor_landscape,1925_gabriel_gyurjian.JPG",Tsaghkadzor Landscape,Gabriel Gyurjian,1925,Impressionism,0.6240373849868774,"data/processed_images/armenian_local/tsaghkadzor_landscape,1925_gabriel_gyurjian.jpg"
+thepoetvahan_tekeyan_yervand_kochar.JPG,The Poet Vahan Tekeyan,Yervand Kochar,,Impressionism,0.2958962321281433,data/processed_images/armenian_local/thepoetvahan_tekeyan_yervand_kochar.jpg
+still_life.horses_people_1930_yervand_kochar.JPG,Still Life Horses People,Yervand Kochar,1930,Cubism,0.6644046902656555,data/processed_images/armenian_local/still_life.horses_people_1930_yervand_kochar.jpg
+"family.generations,1925_yervand_kochar.JPG",Family Generations,Yervand Kochar,1925,Expressionism,0.5389246940612793,"data/processed_images/armenian_local/family.generations,1925_yervand_kochar.jpg"
+the_execution_of_the_communists_in_tatev_1930_hakob_kojoyan.JPG,The Execution of the Communists in Tatev,Hakob Kojoyan,1930,Impressionism,0.24664318561553955,data/processed_images/armenian_local/the_execution_of_the_communists_in_tatev_1930_hakob_kojoyan.jpg
+"de_profundis,from_the_bottom_of_heart_1919_yervand_kochar.JPG","De Profundis, from the bottom of heart",Yervand Kochar,1919,Expressionism,0.32288557291030884,"data/processed_images/armenian_local/de_profundis,from_the_bottom_of_heart_1919_yervand_kochar.jpg"
+portrait_of_artist_levon_aslamazian_1919_yervand_kochar.JPG,Portrait of artist Levon Aslamazian,Yervand Kochar,1919,Expressionism,0.4495801329612732,data/processed_images/armenian_local/portrait_of_artist_levon_aslamazian_1919_yervand_kochar.jpg
+woman_with_a_glass_1920_yervand_kochar.JPG,Woman With a Glass,Yervand Kochar,1920,Expressionism,0.44414272904396057,data/processed_images/armenian_local/woman_with_a_glass_1920_yervand_kochar.jpg
+street_in_tabriz_1922_hakob_kojoyan.JPG,Street in Tabriz,Hakob Kojoyan,1922,Impressionism,0.22558079659938812,data/processed_images/armenian_local/street_in_tabriz_1922_hakob_kojoyan.jpg
+dining-hall_in_tabriz_1922_hakob_kojoyan.JPG,Dining hall in Tabriz,Hakob Kojoyan,1922,Cubism,0.5399312973022461,data/processed_images/armenian_local/dining-hall_in_tabriz_1922_hakob_kojoyan.jpg
+before_the_mirror_1928_georgy_yakulov.JPG,Before the Mirror,Georgy Yakulov,1928,Impressionism,0.49574264883995056,data/processed_images/armenian_local/before_the_mirror_1928_georgy_yakulov.jpg
+negro.decorative_panel_georgy_yakulov.JPG,Negro. Decorative panel,Georgy Yakulov,,Expressionism,0.3316892385482788,data/processed_images/armenian_local/negro.decorative_panel_georgy_yakulov.jpg
+"Poster_of_cafe_""pittoresque"",1917_georgy_yakulov.JPG","Poster of café ""Pittoresque""",Georgy Yakulov,1917,Symbolism,0.18567092716693878,"data/processed_images/armenian_local/Poster_of_cafe_""pittoresque"",1917_georgy_yakulov.jpg"
+landscape_georgy_yakulov.JPG,Landscape,Georgy Yakulov,,Impressionism,0.275236040353775,data/processed_images/armenian_local/landscape_georgy_yakulov.jpg
+portrait_of_panna_paskevich_georgy_yakulov.JPG,Portrait of Panna Paskevich,Georgy Yakulov,,Impressionism,0.33878380060195923,data/processed_images/armenian_local/portrait_of_panna_paskevich_georgy_yakulov.jpg
+monte_carlo_1913_georgy_yakulov.JPG,Monte Carlo,Georgy Yakulov,1913,Impressionism,0.49355924129486084,data/processed_images/armenian_local/monte_carlo_1913_georgy_yakulov.jpg
+churn_minas_avetisyan.JPG,Churn,Minas Avetisyan,,Cubism,0.3663051724433899,data/processed_images/armenian_local/churn_minas_avetisyan.jpg
+woman_with_tray_ruben_shanverdyan.JPG,Woman with Tray,Ruben Shanverdyan,,Cubism,0.859889030456543,data/processed_images/armenian_local/woman_with_tray_ruben_shanverdyan.jpg
+horses_1968_alexander_grigoryan.JPG,Horses,Alexander Grigoryan,1968,Impressionism,0.4945487380027771,data/processed_images/armenian_local/horses_1968_alexander_grigoryan.jpg
+pastoral_clarinettist_1953_marcos_grigorian.JPG,Pastoral Clarinettist,Marcos Grigorian,1953,Pop_Art,0.5360444188117981,data/processed_images/armenian_local/pastoral_clarinettist_1953_marcos_grigorian.jpg
+still_life_1960_minas_avetisyan.JPG,Still Life,Minas Avetisyan,1960,Cubism,0.6492025256156921,data/processed_images/armenian_local/still_life_1960_minas_avetisyan.jpg
+still_life_watermelon_1960_minas_avetisyan.JPG,Still life Watermelon,Minas Avetisyan,1960,Fauvism,0.4006517827510834,data/processed_images/armenian_local/still_life_watermelon_1960_minas_avetisyan.jpg
+at_the_choreographic_school_dancers_1967_robert_elibekyan.JPG,At the Choreographic School Dancers,Robert Elibekyan,1967,Post_Impressionism,0.23764532804489136,data/processed_images/armenian_local/at_the_choreographic_school_dancers_1967_robert_elibekyan.jpg
+singers_1969_hrachya_hakobyan.JPG,Singers,Hrachya Hakobyan,1969,Expressionism,0.46091869473457336,data/processed_images/armenian_local/singers_1969_hrachya_hakobyan.jpg
+hanging_sujukh_1964_hovsep_karalian.JPG,Hanging Sujukh,Hovsep Karalian,1964,Expressionism,0.19974744319915771,data/processed_images/armenian_local/hanging_sujukh_1964_hovsep_karalian.jpg
+self-portrait_1970_varditer_karapetyan.JPG,Self Portrait,Varditer Karapetyan,1970,Expressionism,0.3479471802711487,data/processed_images/armenian_local/self-portrait_1970_varditer_karapetyan.jpg
+servants'_ladder_shushan_egoyan.JPG,Servants' Ladder,Shushan Egoyan,,Impressionism,0.31594911217689514,data/processed_images/armenian_local/servants'_ladder_shushan_egoyan.jpg
+going_to_study_1953_anatoly_papyan.JPG,Going to study,Anatoly Papyan,1953,Impressionism,0.43922144174575806,data/processed_images/armenian_local/going_to_study_1953_anatoly_papyan.jpg
+mariam_1939_nikolay_tevosyan.JPG,Mariam,Nikolay Tevosyan,1939,Pop_Art,0.30679768323898315,data/processed_images/armenian_local/mariam_1939_nikolay_tevosyan.jpg
+head_of_a_woman_1944_nikolay_tevosyan.JPG,Head of a woman,Nikolay Tevosyan,1944,Expressionism,0.49549204111099243,data/processed_images/armenian_local/head_of_a_woman_1944_nikolay_tevosyan.jpg
+still_life_with_a_yellow_pitcher_1946_grigor_mkrtichian.JPG,Still life with a yellow pitcher,Grigor Mkrtichian,1946,Impressionism,0.2687147557735443,data/processed_images/armenian_local/still_life_with_a_yellow_pitcher_1946_grigor_mkrtichian.jpg
+spandaryan_street_1941_sedrak_rashmajyan.JPG,Spandaryan street,Sedrak Rashmajyan,1941,Impressionism,0.6655238270759583,data/processed_images/armenian_local/spandaryan_street_1941_sedrak_rashmajyan.jpg
+still_life_pears_and_peaches_1943_mariam_aslamazyan.JPG,Still life pears and peaches,Mariam Aslamazyan,1943,Post_Impressionism,0.3816843330860138,data/processed_images/armenian_local/still_life_pears_and_peaches_1943_mariam_aslamazyan.jpg
+half-naked_women_arpenik_nalbandyan.JPG,Half naked women,Arpenik Nalbandyan,,Impressionism,0.4368431568145752,data/processed_images/armenian_local/half-naked_women_arpenik_nalbandyan.jpg
+girl_with_a_basket_1942_arpenik_nalbandyan.JPG,Girl with a basket,Arpenik Nalbandyan,1942,Impressionism,0.36944815516471863,data/processed_images/armenian_local/girl_with_a_basket_1942_arpenik_nalbandyan.jpg
+yerevan_still_life_mher_abeghyan.JPG,Yerevan still life,Mher Abeghyan,,Impressionism,0.3758150637149811,data/processed_images/armenian_local/yerevan_still_life_mher_abeghyan.jpg
+carpet_weaver_hrachuhi_sedrak_rashmajyan.JPG,Carpet weaver Hrachuhi,Sedrak Rashmajyan,,Impressionism,0.7380236387252808,data/processed_images/armenian_local/carpet_weaver_hrachuhi_sedrak_rashmajyan.jpg
+watchman_sedrak_rashmajyan.JPG,Watchman,Sedrak Rashmajyan,,Impressionism,0.6178312301635742,data/processed_images/armenian_local/watchman_sedrak_rashmajyan.jpg
+self-portrait_koryun_simonyan.JPG,Self portrait ,Koryun Simonyan,,Impressionism,0.632801353931427,data/processed_images/armenian_local/self-portrait_koryun_simonyan.jpg
+Exodus_of_armenians_hrant_stepanyan.JPG,Exodus of Armenians,Hrant Stepanyan,,Impressionism,0.6088041067123413,data/processed_images/armenian_local/Exodus_of_armenians_hrant_stepanyan.jpg
+district_in_bucharest_bardugh_vardanyan.JPG,District in Bucharest,Bardugh Vardanyan,,Impressionism,0.6763913035392761,data/processed_images/armenian_local/district_in_bucharest_bardugh_vardanyan.jpg
+shoemaker_bartugh_vardanyan.JPG,Shoemaker,Bardugh Vardanyan,,Impressionism,0.4101082980632782,data/processed_images/armenian_local/shoemaker_bartugh_vardanyan.jpg
+workers_district.paris_1951_artavazd_berberian.JPG,Workers District. Paris,Artavazd Berberian,,Expressionism,0.6139122247695923,data/processed_images/armenian_local/workers_district.paris_1951_artavazd_berberian.jpg
+portrait_of_a_kurd_1954_eduard_isabekyan.JPG,Portrait of a kurd,Eduard Isabekyan,1954,Impressionism,0.704250156879425,data/processed_images/armenian_local/portrait_of_a_kurd_1954_eduard_isabekyan.jpg
+khachatur_abovyan_in_the_heights_of_mount_ararat_1950_eduard_isabekyan.JPG,Khachatur Abovyan in the heights of mount Ararat,Eduard Isabekyan,1950,Romanticism,0.6239095330238342,data/processed_images/armenian_local/khachatur_abovyan_in_the_heights_of_mount_ararat_1950_eduard_isabekyan.jpg
+zoya(tanya)_eduard_isabekyan.JPG,Zoya(Tanya),Eduard Isabekyan,,Baroque,0.57980877161026,data/processed_images/armenian_local/zoya(tanya)_eduard_isabekyan.jpg
+anahit_1956_grigor_khanjyan.JPG,Anahit,Grigor Khanjyan,1956,Impressionism,0.5540419816970825,data/processed_images/armenian_local/anahit_1956_grigor_khanjyan.jpg
+aspiration_1960_hovhannes_zardaryan.JPG,Aspiration,Hovhannes Zardaryan,1960,Pop_Art,0.7423014044761658,data/processed_images/armenian_local/aspiration_1960_hovhannes_zardaryan.jpg
+sayat-nova_1963_suren_safaryan.JPG,Sayat Nova,Suren Safaryan,1963,Expressionism,0.2975159287452698,data/processed_images/armenian_local/sayat-nova_1963_suren_safaryan.jpg
+"peace,spring_1960_nikoghayos_kotanjyan.JPG","Peace, spring",Nikoghayos Kotanjyan,1960,Art_Nouveau_Modern,0.29402148723602295,"data/processed_images/armenian_local/peace,spring_1960_nikoghayos_kotanjyan.jpg"
+adolescence_1967_sargis_muradyan.JPG,Adolescence,Sargis Muradyan,1967,Expressionism,0.28229886293411255,data/processed_images/armenian_local/adolescence_1967_sargis_muradyan.jpg
+labour_and_love_mkrtich_kamalyan.JPG,Labour and love,Mkrtich Kamalyan,,Expressionism,0.22110864520072937,data/processed_images/armenian_local/labour_and_love_mkrtich_kamalyan.jpg
+"on_the_angels_bridge_from_the_series""italian_impressions""1965-1966_grigor_khanjyan.JPG","On the angels bridge from the series ""Italian impressions""",Grigor Khanjyan,1965-1966,Post_Impressionism,0.33058351278305054,"data/processed_images/armenian_local/on_the_angels_bridge_from_the_series""italian_impressions""1965-1966_grigor_khanjyan.jpg"
+mother_1917_hovakim_hovhannissian.JPG,Mother ,Hovakim Hovhannissian,1917,Pop_Art,0.21839730441570282,data/processed_images/armenian_local/mother_1917_hovakim_hovhannissian.jpg
+"our_balcony,tiflis_yeghishe_tadevossian.JPG","Our balcony, Tiflis",Yeghishe Tadevossian,,Impressionism,0.4323725700378418,"data/processed_images/armenian_local/our_balcony,tiflis_yeghishe_tadevossian.jpg"
+after_the_ball_1912_vahram_gayfedjian.JPG,After the ball ,Vahram Gayfedjian,1912,Impressionism,0.5912618041038513,data/processed_images/armenian_local/after_the_ball_1912_vahram_gayfedjian.jpg
+"red_sailboat,brittany_grigor_sharbabchian.JPG","Red sailboat, Brittany",Grigor Sharbabchian,,Post_Impressionism,0.442952036857605,"data/processed_images/armenian_local/red_sailboat,brittany_grigor_sharbabchian.jpg"
+at_the_spring_1911_panos_terlemezian.JPG,At the spring,Panos Terlemezian,1911,Impressionism,0.4723372161388397,data/processed_images/armenian_local/at_the_spring_1911_panos_terlemezian.jpg
+"espalion,the_old_bridge_1937_raphael_chichmanian.JPG","Espalion, The old bridge",Raphael Chichmanian,1937,Post_Impressionism,0.30385076999664307,"data/processed_images/armenian_local/espalion,the_old_bridge_1937_raphael_chichmanian.jpg"
+the_girl_at_the_piano_1899_hmayak_artsatbanian.JPG,The girl at the piano,Hmayak Artsatbanian,1899,Impressionism,0.34036967158317566,data/processed_images/armenian_local/the_girl_at_the_piano_1899_hmayak_artsatbanian.jpg
+portrait_of_a_woman_1915_david_okroyants.JPG,Portrait of a woman,David Okroyants,1915,Abstract_Expressionism,0.2829188108444214,data/processed_images/armenian_local/portrait_of_a_woman_1915_david_okroyants.jpg
+reding_son's_letter_receided_from_foreign_lands_1897_karapet(sharl)_nshanian.JPG,Reding son's letter receided from foreign lands,Karapet(Sharl) Nshanian,1897,Impressionism,0.43003982305526733,data/processed_images/armenian_local/reding_son's_letter_receided_from_foreign_lands_1897_karapet(sharl)_nshanian.jpg
+child_armenia(the women from sassoun)_1903_arshag_fetvadjian.JPG,Child Armenia(the women from Sassoun),Arshag Fetvadjian,1903,Impressionism,0.34094303846359253,data/processed_images/armenian_local/child_armenia(the women from sassoun)_1903_arshag_fetvadjian.jpg
+portrait_of_the_artist's_father_1900_stepan.JPG,Portrait of the Artist's father,Stepan Aghajanian,1900,Impressionism,0.3984023928642273,data/processed_images/armenian_local/portrait_of_the_artist's_father_1900_stepan.jpg
+portrait_of_the_artist's_mother_1900_stepan_aghajanian.JPG,Portrait of the artist's mother,Stepan Aghajanian,1900,Expressionism,0.2049563229084015,data/processed_images/armenian_local/portrait_of_the_artist's_mother_1900_stepan_aghajanian.jpg
+the_field_with_sunflowers_1898_gevorg_bashinjaghian.JPG,The field with sunflowers,Gevorg Bashinjaghian,1898,Realism,0.43579721450805664,data/processed_images/armenian_local/the_field_with_sunflowers_1898_gevorg_bashinjaghian.jpg
+sanahin_bridge_1899_harutiun_shmavonian.JPG,Sanahin bridge,Harutiun Shmavonian,1899,Impressionism,0.42621007561683655,data/processed_images/armenian_local/sanahin_bridge_1899_harutiun_shmavonian.jpg
+the_road_to_dilijan_1895_gevorg.JPG,The road to Dilijan,Gevorg Bashinjaghian,1895,Romanticism,0.4863619804382324,data/processed_images/armenian_local/the_road_to_dilijan_1895_gevorg.jpg
+rural_scene_1898_gevorg.JPG,Rural Scene,Gevorg Bashinjaghian,1898,Realism,0.3782520890235901,data/processed_images/armenian_local/rural_scene_1898_gevorg.jpg
+cathedral_of_ani_1900_gevorg_bashinjaghian.JPG,Cathedral of Ani,Gevorg Bashinjaghian,1900,Post_Impressionism,0.44799333810806274,data/processed_images/armenian_local/cathedral_of_ani_1900_gevorg_bashinjaghian.jpg
+the_abandoned_1899_vardges.JPG,The Abandoned,Vardges Sureniants,1899,Impressionism,0.2818680703639984,data/processed_images/armenian_local/the_abandoned_1899_vardges.jpg
+portrait_of_a_women_1893_vardges.JPG,Portrait of a women,Vardges Sureniants,1893,Impressionism,0.6503298878669739,data/processed_images/armenian_local/portrait_of_a_women_1893_vardges.jpg
+sorrow_vardges.JPG,Sorrow,Vardges Sureniants,,Impressionism,0.331533282995224,data/processed_images/armenian_local/sorrow_vardges.jpg
+"ferdowsi_reading_""shahnameh""_poem_to_shah_mahmud_of_ghazni_1913_vardges.JPG","Ferdowsi reading ""Shahnameh"" poem to Shah Mahmud of Ghazni",Vardges Sureniants,1913,Post_Impressionism,0.31201303005218506,"data/processed_images/armenian_local/ferdowsi_reading_""shahnameh""_poem_to_shah_mahmud_of_ghazni_1913_vardges.jpg"
+in_the_harem_1918_vardges_sureniants.JPG,In the harem,Vardges Sureniants,1918,Impressionism,0.2833367884159088,data/processed_images/armenian_local/in_the_harem_1918_vardges_sureniants.jpg
+"Ani,women_leaving_the_church_1905_vardges.JPG","Ani, women leaving the church",Vardges Sureniants,1905,Impressionism,0.7375951409339905,"data/processed_images/armenian_local/Ani,women_leaving_the_church_1905_vardges.jpg"
+etchmiadzin_cathedral_1895_vardges_sureniants.JPG,Etchmiadzin cathedral,Vardges Sureniants,1895,Impressionism,0.5293014645576477,data/processed_images/armenian_local/etchmiadzin_cathedral_1895_vardges_sureniants.jpg
+desecrated shrine_vardges_sureniants.JPG,Desecrated Shrine,Vardges Sureniants,,Impressionism,0.37583059072494507,data/processed_images/armenian_local/desecrated shrine_vardges_sureniants.jpg
+the_image_of_edessa(the mandylion)_vardges_sureniants.JPG,The image of Edessa(the Mandylion),Vardges Sureniants,,Expressionism,0.3689424693584442,data/processed_images/armenian_local/the_image_of_edessa(the mandylion)_vardges_sureniants.jpg
+Shamiram beside the body of Ara the Beautiful_vardges_sureniants.JPG,Shamiram beside the body of Ara the Beautiful,Vardges Sureniants,,Impressionism,0.5427736043930054,data/processed_images/armenian_local/Shamiram beside the body of Ara the Beautiful_vardges_sureniants.jpg
+spanish_women_vardges_sureniants.JPG,Spanish women,Vardges Sureniants,,Pop_Art,0.29116344451904297,data/processed_images/armenian_local/spanish_women_vardges_sureniants.jpg
+spanish_dancer_vardges_sureniants.JPG,Spanish dancer,Vardges Sureniants,,Baroque,0.2299659252166748,data/processed_images/armenian_local/spanish_dancer_vardges_sureniants.jpg
+escape_from_harem_1889_vardges_sureniants.JPG,Escape from harem,Vardges Sureniants,1889,Impressionism,0.33370441198349,data/processed_images/armenian_local/escape_from_harem_1889_vardges_sureniants.jpg
+serenade_1888_vardges_sureniants.JPG,Serenade,Vardges Sureniants,1888,Impressionism,0.3873724341392517,data/processed_images/armenian_local/serenade_1888_vardges_sureniants.jpg
+the_daryal_gorge_1910_gevorg_bashinjaghian.JPG,The Daryal Gorge,Gevorg Bashinjaghian,1910,Impressionism,0.45438486337661743,data/processed_images/armenian_local/the_daryal_gorge_1910_gevorg_bashinjaghian.jpg
+early_spring_1890_gevorg_bashinjaghian.JPG,Early spring,Gevorg Bashinjaghian,1890,Realism,0.32463473081588745,data/processed_images/armenian_local/early_spring_1890_gevorg_bashinjaghian.jpg
+spring_of_river_samur_dagestan_1886_harutiun_shamshinian.JPG,"Spring of river Samur, Dagestan",Harutiun Shamshian,1886,Impressionism,0.2973913550376892,data/processed_images/armenian_local/spring_of_river_samur_dagestan_1886_harutiun_shamshinian.jpg
+shepherd_1915_hmayak_hakobian.JPG,Shepherd,Hmayak Hakobian,1915,Baroque,0.2258901596069336,data/processed_images/armenian_local/shepherd_1915_hmayak_hakobian.jpg
+tillage_1918-20_hmayak_hakobian.JPG,Tillage,Hmayak Hakobian,1918-20,Impressionism,0.5673276782035828,data/processed_images/armenian_local/tillage_1918-20_hmayak_hakobian.jpg
+still_life_pomegranates_1926_panos_terlemezian.JPG,Still life pomegranates,Panos Terlemezian,1926,Impressionism,0.4805178642272949,data/processed_images/armenian_local/still_life_pomegranates_1926_panos_terlemezian.jpg
+shepherd_from_lori_1905_panos_terlemezian.JPG,Shepherd from Lori,Panos Terlemezian,1905,Realism,0.41596755385398865,data/processed_images/armenian_local/shepherd_from_lori_1905_panos_terlemezian.jpg
+from_the_balcony_1962_grigor_aghasyan.JPG,From the balcony,Grigor Aghasyan,1962,Impressionism,0.4113351106643677,data/processed_images/armenian_local/from_the_balcony_1962_grigor_aghasyan.jpg
+from_the_balcony_of_thestudioonkievyanstreet_1964GrigorAghasyan.JPG,From the balcony of the studio on Kievyan street,Grigor Aghasyan,1964,Impressionism,0.3433016836643219,data/processed_images/armenian_local/from_the_balcony_of_thestudioonkievyanstreet_1964GrigorAghasyan.jpg
+kond_2005_grigor_aghasyan.JPG,"Kond, 2005",Grigor Aghasyan,2005,Impressionism,0.7944759726524353,data/processed_images/armenian_local/kond_2005_grigor_aghasyan.jpg
+kond_1995_grigor_aghasyan.JPG,"Kond, 1995",Grigor Aghasyan,1995,Baroque,0.5299832820892334,data/processed_images/armenian_local/kond_1995_grigor_aghasyan.jpg
+our_district_1987_grigor_aghasyan.JPG,Our district,Grigor Aghasyan,1987,Impressionism,0.6252947449684143,data/processed_images/armenian_local/our_district_1987_grigor_aghasyan.jpg
+old_yerevan_grigor_aghasyan.JPG,Old Yerevan,Grigor Aghasyan,,Naive_Art_Primitivism,0.2483665496110916,data/processed_images/armenian_local/old_yerevan_grigor_aghasyan.jpg
+a_cup_of_coffee_2001_grigor_aghasyan.JPG,A cup of coffee,Grigor Aghasyan,2001,Impressionism,0.49606630206108093,data/processed_images/armenian_local/a_cup_of_coffee_2001_grigor_aghasyan.jpg
+"grigor_aghasyan_self-portrait,1991.JPG",Self Portrait,Grigor Aghasyan,1991,Expressionism,0.4111092984676361,"data/processed_images/armenian_local/grigor_aghasyan_self-portrait,1991.jpg"
+hovhannes_alkhazyan_at_the_city_wall.JPG,At the city wall,Hovhannes Alkhazyan,,Impressionism,0.5201351642608643,data/processed_images/armenian_local/hovhannes_alkhazyan_at_the_city_wall.jpg
+hovhvannes_alkhazyan_corner_of_a_market.JPG,Corner of a market,Hovhannes Alkhazyan,,Impressionism,0.5000131130218506,data/processed_images/armenian_local/hovhvannes_alkhazyan_corner_of_a_market.jpg
+hovhannes_alkhazyan_a_bridge_in_toledo.JPG,A bridge in Toledo,Hovhannes Alkhazyan,,Impressionism,0.7068917155265808,data/processed_images/armenian_local/hovhannes_alkhazyan_a_bridge_in_toledo.jpg
+hovhannes_alkhazyan_near_the_spring.JPG,Near the spring,Hovhannes Alkhazyan,,Post_Impressionism,0.530371904373169,data/processed_images/armenian_local/hovhannes_alkhazyan_near_the_spring.jpg
+hovhannes_alkhazyan_province.study.JPG,Province.Study,Hovhannes Alkhazyan,,Impressionism,0.807232677936554,data/processed_images/armenian_local/hovhannes_alkhazyan_province.study.jpg
+Hovhannes_alkhazyan_small_house_in_the_garden.JPG,Small house in the garden,Hovhannes Alkhazyan,,Impressionism,0.6403517723083496,data/processed_images/armenian_local/Hovhannes_alkhazyan_small_house_in_the_garden.jpg
+I616503.jpg,I616503,,,Realism,0.18979300558567047,data/processed_images/armenian_local/I616503.jpg
+Աշնանային մառախլապատ օր.jpeg,Աշնանային մառախլապատ օր,,,Post_Impressionism,0.362234890460968,data/processed_images/armenian_local/Աշնանային մառախլապատ օր.jpg
+Արագած.jpeg,Արագած,,,Art_Nouveau_Modern,0.37580662965774536,data/processed_images/armenian_local/Արագած.jpg
+ԳԻՇԵՐԱՅԻՆ ԲՆԱՆԿԱՐ.jpeg,ԳԻՇԵՐԱՅԻՆ ԲՆԱՆԿԱՐ,,,Pop_Art,0.3204236924648285,data/processed_images/armenian_local/ԳԻՇԵՐԱՅԻՆ ԲՆԱՆԿԱՐ.jpg
+ԳԻՍԱՍՏՂ.jpeg,ԳԻՍԱՍՏՂ,,,Expressionism,0.6110475659370422,data/processed_images/armenian_local/ԳԻՍԱՍՏՂ.jpg
+Եգիպտական դիմակներ.jpeg,Եգիպտական դիմակներ,,,Expressionism,0.6285857558250427,data/processed_images/armenian_local/Եգիպտական դիմակներ.jpg
+ԵրԵՎանյան բակ գարնանը.jpeg,ԵրԵՎանյան բակ գարնանը,,,Impressionism,0.5232983827590942,data/processed_images/armenian_local/ԵրԵՎանյան բակ գարնանը.jpg
+ԻՆՔՆԱԴԻՄԱՆԿԱՐ.jpeg,ԻՆՔՆԱԴԻՄԱՆԿԱՐ,,,Expressionism,0.7668456435203552,data/processed_images/armenian_local/ԻՆՔՆԱԴԻՄԱՆԿԱՐ.jpg
+Ինքնադիմանկար- Երեք հասակ.jpeg,Ինքնադիմանկար  Երեք հասակ,,,Expressionism,0.5925696492195129,data/processed_images/armenian_local/Ինքնադիմանկար- Երեք հասակ.jpg
+Լ.Սարյանի դիմանկարը- Նկարչի կյանքից.jpeg,Լ.Սարյանի դիմանկարը  Նկարչի կյանքից,,,Post_Impressionism,0.6029586791992188,data/processed_images/armenian_local/Լ.Սարյանի դիմանկարը- Նկարչի կյանքից.jpg
+ԿՈՍՏԱՆԴՆԱՊՈԼԻՍԻ ՇՆԵՐԸ.jpeg,ԿՈՍՏԱՆԴՆԱՊՈԼԻՍԻ ՇՆԵՐԸ,,,Expressionism,0.563664436340332,data/processed_images/armenian_local/ԿՈՍՏԱՆԴՆԱՊՈԼԻՍԻ ՇՆԵՐԸ.jpg
+ՄՈՐ ԴԻՄԱՆԿԱՐԸ.jpeg,ՄՈՐ ԴԻՄԱՆԿԱՐԸ,,,Post_Impressionism,0.2822478711605072,data/processed_images/armenian_local/ՄՈՐ ԴԻՄԱՆԿԱՐԸ.jpg
+Մրգեր.jpeg,Մրգեր,,,Post_Impressionism,0.42483553290367126,data/processed_images/armenian_local/Մրգեր.jpg
+ՊՈՒՐԱԿ ՍԱՄԲԵԿԻ ԱՓԻՆ.jpeg,ՊՈՒՐԱԿ ՍԱՄԲԵԿԻ ԱՓԻՆ,,,Post_Impressionism,0.39337992668151855,data/processed_images/armenian_local/ՊՈՒՐԱԿ ՍԱՄԲԵԿԻ ԱՓԻՆ.jpg
+Պարսկաստան.jpeg,Պարսկաստան,,,Expressionism,0.4359041750431061,data/processed_images/armenian_local/Պարսկաստան.jpg
+ՋՐՀՈՐԻ ՄՈՏ- ՇՈԳ ՕՐ.jpeg,ՋՐՀՈՐԻ ՄՈՏ  ՇՈԳ ՕՐ,,,Post_Impressionism,0.4596331715583801,data/processed_images/armenian_local/ՋՐՀՈՐԻ ՄՈՏ- ՇՈԳ ՕՐ.jpg
+ՍԵՐ- ՀԵՔԻԱԹ.jpeg,ՍԵՐ  ՀԵՔԻԱԹ,,,Post_Impressionism,0.5071521401405334,data/processed_images/armenian_local/ՍԵՐ- ՀԵՔԻԱԹ.jpg
+Քայլող կինը.jpeg,Քայլող կինը,,,Naive_Art_Primitivism,0.680336594581604,data/processed_images/armenian_local/Քայլող կինը.jpg

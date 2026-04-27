@@ -1,0 +1,23 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Large local datasets and generated image folders
+data/datasets/
+data/model_cache/
+data/processed_images/
+data/user_uploads/
+preprocessing_output/
+
+# Local databases and temporary/debug files
+data/*.db
+data/recognition_debug_log.jsonl
+data/last_streamlit_error.log
+real_image_test_output.png
+synthetic_test_output.png
+
+# Notebook checkpoints
+.ipynb_checkpoints/

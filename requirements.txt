@@ -1,0 +1,16 @@
+# requirements.txt
+opencv-python
+numpy
+matplotlib
+torch
+torchvision
+faiss-cpu
+pillow
+scikit-learn
+xgboost
+transformers
+requests
+pandas
+openpyxl
+kagglehub[pandas-datasets]
+streamlit

@@ -1,0 +1,23 @@
+services:
+  art-recognition:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: art-recognition:latest
+    working_dir: /app
+    tty: true
+    stdin_open: true
+    environment:
+      PYTHONPATH: /app
+      HF_HOME: /root/.cache/huggingface
+      TRANSFORMERS_CACHE: /root/.cache/huggingface/transformers
+      KAGGLE_CONFIG_DIR: /root/.kaggle
+    volumes:
+      - .:/app
+      - ./data:/app/data
+      - ${HOME}/.kaggle:/root/.kaggle:ro
+      - huggingface-cache:/root/.cache/huggingface
+    command: ["python", "main.py", "build-index", "--skip-wikiart", "--embedding-model", "clip"]
+
+volumes:
+  huggingface-cache:
