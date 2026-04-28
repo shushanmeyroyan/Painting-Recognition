@@ -14,3 +14,5 @@ pandas
 openpyxl
 kagglehub[pandas-datasets]
 streamlit
+ultralytics
+lightglue

@@ -1,12 +1,14 @@
 {
-  "total_records": 4709,
-  "armenian_records": 209,
-  "wikiart_records": 4500,
-  "style_classes": 27,
-  "style_classifier_trained": true,
-  "style_classifier_backend": "xgboost",
+  "identity_model": "facebook/dinov2-base",
+  "total_paintings": 4709,
+  "armenian_paintings": 209,
+  "wikiart_paintings": 4500,
+  "total_embeddings": 18836,
+  "augmentations_per_painting": 4,
+  "include_wikiart": true,
+  "wikiart_sample_size": 4500,
   "index_path": "data/faiss_index.idx",
   "mapping_path": "data/index_mapping.json",
-  "classifier_path": "data/style_classifier.pkl",
-  "armenian_style_predictions_path": "data/armenian_style_predictions.csv"
+  "embeddings_path": "data/embeddings.npy",
+  "yolo_model_path": "data/models/painting_yolo_seg.pt"
 }

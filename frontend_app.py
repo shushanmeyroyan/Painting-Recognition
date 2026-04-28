@@ -11,18 +11,11 @@ import cv2
 import numpy as np
 import pandas as pd
 import streamlit as st
-from PIL import Image, UnidentifiedImageError
+from PIL import Image, ImageOps, UnidentifiedImageError
 
-from art_recognition.ml_models import (
-    ClipZeroShotStylePredictor,
-    EmbeddingExtractor,
-    StyleClassifier,
-    predict_style_with_fallback,
-)
-from art_recognition.preprocessing import draw_preprocessing_result, preprocess_gallery_image
+from art_recognition.identity import DEFAULT_DINOV2_MODEL
 from art_recognition.pipeline import (
-    build_query_response,
-    preprocess_painting_image,
+    ArtRecognitionPipeline,
     preprocess_query_image_variants_from_bgr,
 )
 
@@ -39,8 +32,8 @@ STREAMLIT_ERROR_LOG_PATH = DATA_DIR / "last_streamlit_error.log"
 RECOGNITION_DEBUG_LOG_PATH = DATA_DIR / "recognition_debug_log.jsonl"
 BIRTH_OF_VENUS_URL = "https://upload.wikimedia.org/wikipedia/commons/1/1c/Botticelli_Venus.jpg"
 MAX_UPLOAD_MB = 20
-PUBLIC_MODEL_NAME = "clip"
-PUBLIC_TOP_K = 4
+PUBLIC_MODEL_NAME = DEFAULT_DINOV2_MODEL
+PUBLIC_TOP_K = 20
 
 
 def _file_mtime(path: Path) -> float:
@@ -306,22 +299,8 @@ def load_embeddings(cache_key: float = 0.0) -> np.ndarray | None:
 
 
 @st.cache_resource(show_spinner=False)
-def get_embedder(model_name: str) -> EmbeddingExtractor:
-    return EmbeddingExtractor(model_name=model_name)
-
-
-@st.cache_resource(show_spinner=False)
-def get_classifier(cache_key: float = 0.0) -> StyleClassifier | None:
-    if not CLASSIFIER_PATH.exists():
-        return None
-    return StyleClassifier.load(CLASSIFIER_PATH)
-
-
-@st.cache_resource(show_spinner=False)
-def get_zero_shot_predictor(model_name: str, labels: tuple[str, ...]) -> ClipZeroShotStylePredictor | None:
-    if model_name.lower() != "clip" or not labels:
-        return None
-    return ClipZeroShotStylePredictor(get_embedder(model_name), list(labels))
+def get_pipeline() -> ArtRecognitionPipeline:
+    return ArtRecognitionPipeline(project_root=PROJECT_ROOT)
 
 
 def render_intro_page() -> None:
@@ -408,7 +387,7 @@ def _safe_open_image(uploaded_file) -> Image.Image:
     try:
         uploaded_file.seek(0)
         image = Image.open(uploaded_file)
-        converted = image.convert("RGB")
+        converted = ImageOps.exif_transpose(image).convert("RGB")
         uploaded_file.seek(0)
         return converted
     except UnidentifiedImageError as exc:
@@ -426,26 +405,6 @@ def _save_temp_rgb_image(image: Image.Image) -> Path:
         temp_path = Path(tmp.name)
     image.save(temp_path)
     return temp_path
-
-
-def _matches_for_embedding(
-    query_embedding: np.ndarray,
-    embeddings: np.ndarray,
-    mapping: list[dict[str, object]],
-    top_k: int,
-) -> list[dict[str, object]]:
-    scores = embeddings @ query_embedding
-    top_indices = np.argsort(scores)[::-1][:top_k]
-    matches = []
-    for rank, idx in enumerate(top_indices, start=1):
-        matches.append(
-            {
-                "rank": rank,
-                "score": float(scores[idx]),
-                "metadata": mapping[int(idx)],
-            }
-        )
-    return matches
 
 
 def _append_recognition_debug_log(
@@ -491,54 +450,16 @@ def _predict_query(
     top_k: int,
     details: dict[str, object],
 ) -> dict[str, object]:
-    mapping = load_mapping(_file_mtime(MAPPING_PATH))
-    embeddings = load_embeddings(_file_mtime(EMBEDDINGS_PATH))
-    if not mapping or embeddings is None:
+    del details
+    if not MAPPING_PATH.exists() or not EMBEDDINGS_PATH.exists() or not INDEX_PATH.exists():
         raise RuntimeError("The index is not available yet. Build the project first.")
-    indexed_model = str(mapping[0].get("embedding_model") or "").lower() if mapping else ""
-    if indexed_model and indexed_model != model_name.lower():
-        raise RuntimeError(
-            f"The saved index was built with {indexed_model}. Rebuild it with {model_name} before querying."
-        )
-
-    extractor = get_embedder(model_name)
-    classifier = get_classifier(_file_mtime(CLASSIFIER_PATH))
-    style_labels = classifier.classes_ if classifier is not None else sorted(
-        {str(record.get("style")) for record in mapping if record.get("style")}
+    result = get_pipeline().query(
+        upload_path,
+        embedding_model=model_name,
+        top_k=top_k,
     )
-    zero_shot = get_zero_shot_predictor(model_name, tuple(style_labels))
-
-    best_result: dict[str, object] | None = None
-    for variant in details["query_variants"]:
-        query_embedding = extractor.extract(variant["processed_rgb"]).astype(np.float32)
-        query_norm = np.linalg.norm(query_embedding)
-        if query_norm != 0:
-            query_embedding = query_embedding / query_norm
-
-        predicted_style, predicted_style_confidence, predicted_style_source = predict_style_with_fallback(
-            query_embedding,
-            classifier,
-            zero_shot,
-        )
-
-        matches = _matches_for_embedding(query_embedding, embeddings, mapping, top_k=top_k)
-        result = build_query_response(
-            image_path=upload_path,
-            matches=matches,
-            predicted_style=predicted_style,
-            predicted_style_confidence=predicted_style_confidence,
-            predicted_style_source=predicted_style_source,
-        )
-        result["query_variant"] = variant["name"]
-        if result["is_recognized"]:
-            return result
-        if best_result is None or result["recognition_score"] > best_result["recognition_score"]:
-            best_result = result
-
-    if best_result is None:
-        return build_query_response(image_path=upload_path, matches=[])
-    _append_recognition_debug_log(upload_path, best_result, top_k)
-    return best_result
+    _append_recognition_debug_log(upload_path, result, top_k)
+    return result
 
 
 def preprocess_query_image_with_details(image_path: str | Path) -> dict[str, object]:
@@ -546,31 +467,15 @@ def preprocess_query_image_with_details(image_path: str | Path) -> dict[str, obj
     if image is None:
         raise FileNotFoundError("Could not read the uploaded image.")
 
-    result = preprocess_gallery_image(image)
-    candidates = result["candidates"]
-    annotated = draw_preprocessing_result(image, candidates)
-    selected_crop = image
-    case_message = "No distinct framed painting was detected, so the whole image was analyzed."
-
-    if len(candidates) == 1:
-        selected_crop = candidates[0].crop
-        case_message = "One painting area was detected and analyzed."
-    elif len(candidates) > 1:
-        best = max(candidates, key=lambda candidate: candidate.crop.shape[0] * candidate.crop.shape[1])
-        selected_crop = best.crop
-        case_message = "Several painting areas were detected. The largest one was analyzed first."
-
     query_variants = preprocess_query_image_variants_from_bgr(image)
+    first_variant = query_variants[0]
     return {
-        "processed_rgb": preprocess_painting_image(selected_crop),
+        "processed_rgb": first_variant["processed_rgb"],
         "query_variants": query_variants,
-        "annotated_rgb": cv2.cvtColor(annotated, cv2.COLOR_BGR2RGB),
-        "candidate_count": len(candidates),
-        "message": case_message,
-        "candidate_previews": [
-            cv2.cvtColor(candidate.crop, cv2.COLOR_BGR2RGB)
-            for candidate in candidates[:3]
-        ],
+        "annotated_rgb": first_variant["processed_rgb"],
+        "candidate_count": 1,
+        "message": f"Painting crop prepared with {first_variant['name']}.",
+        "candidate_previews": [first_variant["processed_rgb"]],
     }
 
 
