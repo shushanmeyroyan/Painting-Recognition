@@ -15,6 +15,12 @@ Generate YOLO training data:
 python main.py generate-yolo --samples-per-image 12
 ```
 
+Generate YOLO data from Armenian + WikiArt:
+
+```bash
+python main.py generate-yolo --samples-per-image 8 --include-wikiart --wikiart-limit 4500
+```
+
 Train cropper:
 
 ```bash
@@ -57,5 +63,13 @@ This writes:
 data/index_manifest.csv
 data/test_samples/indexed/
 ```
+
+Sync the current indexed WikiArt paintings into `processed_images`:
+
+```bash
+python main.py sync-processed --source wikiart --clean --dataset-copy data/datasets/wikiart --manifest data/processed_images/wikiart_processed_manifest.csv
+```
+
+This makes `data/datasets/wikiart/` and `data/processed_images/wikiart/` contain the same indexed 4500 WikiArt files, preserving style folders so files with the same filename from different styles do not overwrite each other.
 
 You do not need to rebuild embeddings every time. Rebuild only when you change the indexed dataset, model name, augmentation count, or source mix.

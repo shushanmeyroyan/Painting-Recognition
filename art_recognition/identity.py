@@ -31,6 +31,7 @@ transformers_logging.set_verbosity_error()
 DEFAULT_DINOV2_MODEL = "facebook/dinov2-base"
 IDENTITY_EMBEDDING_THRESHOLD = 0.82
 GEOMETRIC_INLIER_THRESHOLD = 35
+PERCEPTUAL_HASH_THRESHOLD = 8
 
 
 @contextlib.contextmanager
@@ -53,6 +54,28 @@ def normalize_matrix(matrix: np.ndarray) -> np.ndarray:
     norms = np.linalg.norm(matrix, axis=1, keepdims=True)
     norms[norms == 0] = 1.0
     return matrix / norms
+
+
+def perceptual_hash(image_bgr: np.ndarray, hash_size: int = 8, highfreq_factor: int = 4) -> str:
+    if image_bgr is None or image_bgr.size == 0:
+        return ""
+    gray = cv2.cvtColor(image_bgr, cv2.COLOR_BGR2GRAY)
+    size = hash_size * highfreq_factor
+    resized = cv2.resize(gray, (size, size), interpolation=cv2.INTER_AREA).astype(np.float32)
+    dct = cv2.dct(resized)
+    low_freq = dct[:hash_size, :hash_size]
+    median = np.median(low_freq[1:, 1:])
+    bits = (low_freq > median).astype(np.uint8).reshape(-1)
+    value = 0
+    for bit in bits:
+        value = (value << 1) | int(bit)
+    return f"{value:0{hash_size * hash_size // 4}x}"
+
+
+def hash_distance(first: str | None, second: str | None) -> int:
+    if not first or not second:
+        return 10**9
+    return int((int(first, 16) ^ int(second, 16)).bit_count())
 
 
 class Dinov2EmbeddingExtractor:

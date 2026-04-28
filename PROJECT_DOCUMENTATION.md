@@ -33,6 +33,7 @@ The new recognition logic is deliberately split into stages:
 - Identity embeddings: `facebook/dinov2-base`.
 - Vector search: FAISS `IndexFlatIP` with L2-normalized vectors.
 - Result aggregation: top-k augmented hits grouped by `painting_id`, regardless of whether the source is Armenian or WikiArt.
+- Exact-image fallback: perceptual hash comparison before DINOv2, source-neutral for Armenian and WikiArt.
 - Geometric verification: LightGlue + SuperPoint when available, with ORB homography as a local fallback. LoFTR can be added as an alternative verifier for weak texture or blur.
 - Style recognition: kept separate from identity recognition. CLIP remains useful for zero-shot style fallback, not exact identity.
 
@@ -42,6 +43,12 @@ Generate synthetic YOLO segmentation data:
 
 ```bash
 python main.py generate-yolo --samples-per-image 12
+```
+
+Generate synthetic YOLO data from Armenian + WikiArt paintings:
+
+```bash
+python main.py generate-yolo --samples-per-image 8 --include-wikiart --wikiart-limit 4500
 ```
 
 Train the cropper:
@@ -89,6 +96,14 @@ data/test_samples/indexed/
 
 Use `data/index_manifest.csv` to see exactly which Armenian and WikiArt paintings are in the current FAISS index. Use the copied sample images for quick Streamlit tests.
 
+Sync visible processed-image copies from the current index:
+
+```bash
+python main.py sync-processed --source wikiart --clean --dataset-copy data/datasets/wikiart --manifest data/processed_images/wikiart_processed_manifest.csv
+```
+
+This copies the currently indexed WikiArt paintings into both `data/datasets/wikiart/` and `data/processed_images/wikiart/` while preserving their style subfolders. The two folders then contain the same 4500 files, and duplicate filenames from different WikiArt folders do not overwrite each other. The CSV manifest shows which raw dataset image maps to which visible dataset and processed copy.
+
 Run the website:
 
 ```bash
@@ -103,15 +118,16 @@ Contains `PaintingCropper`, which tries to use `data/models/painting_yolo_seg.pt
 
 ### `art_recognition/synthetic_yolo.py`
 
-Generates synthetic training samples by placing clean paintings on random wall backgrounds, adding artificial frames, perspective distortion, brightness/contrast changes, blur, JPEG compression, and polygon labels for the true painting area.
+Generates synthetic training samples by placing indexed paintings on random wall backgrounds, adding artificial frames, perspective distortion, brightness/contrast changes, blur, JPEG compression, and polygon labels for the true painting area. It can generate from Armenian paintings only or Armenian + WikiArt with `--include-wikiart`.
 
 ### `art_recognition/identity.py`
 
-Contains DINOv2 embedding extraction, clean-painting augmentations, FAISS result aggregation, and geometric verification with LightGlue/SuperPoint first and ORB fallback. Current thresholds:
+Contains DINOv2 embedding extraction, painting augmentations, perceptual hashing, FAISS result aggregation, and geometric verification with LightGlue/SuperPoint first and ORB fallback. Current thresholds:
 
 ```text
 DINOv2 similarity threshold: 0.82
 Geometric inlier threshold: 35
+Perceptual hash distance threshold: 8
 ```
 
 These are starting values and should be tuned with validation data.

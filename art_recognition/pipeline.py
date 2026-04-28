@@ -16,11 +16,14 @@ from art_recognition.identity import (
     DEFAULT_DINOV2_MODEL,
     GEOMETRIC_INLIER_THRESHOLD,
     IDENTITY_EMBEDDING_THRESHOLD,
+    PERCEPTUAL_HASH_THRESHOLD,
     Dinov2EmbeddingExtractor,
     aggregate_identity_matches,
     augment_clean_painting,
     geometric_verify,
+    hash_distance,
     normalize_matrix,
+    perceptual_hash,
 )
 
 
@@ -126,6 +129,7 @@ def _identity_mapping(
     augmentation_index: int,
     embedding_model: str,
 ) -> dict[str, object]:
+    original_bgr = cv2.imread(record.image_path)
     return {
         "painting_id": painting_id,
         "augmentation_index": augmentation_index,
@@ -139,6 +143,7 @@ def _identity_mapping(
         "artist": record.artist,
         "style": record.style,
         "genre": record.genre,
+        "perceptual_hash": perceptual_hash(original_bgr) if original_bgr is not None else None,
         "embedding_model": embedding_model,
     }
 
@@ -175,10 +180,14 @@ def build_query_response(
     score = float(best.get("score") or 0.0) if best else 0.0
     geometric = best.get("geometric_verification", {}) if best else {}
     inliers = int(geometric.get("inliers") or 0)
+    hash_match = bool(best and geometric.get("method") == "perceptual_hash")
     recognized = bool(
-        best
-        and score >= IDENTITY_EMBEDDING_THRESHOLD
-        and inliers >= GEOMETRIC_INLIER_THRESHOLD
+        hash_match
+        or (
+            best
+            and score >= IDENTITY_EMBEDDING_THRESHOLD
+            and inliers >= GEOMETRIC_INLIER_THRESHOLD
+        )
     )
 
     return {
@@ -190,6 +199,7 @@ def build_query_response(
         "geometric_inliers": inliers,
         "geometric_inlier_threshold": GEOMETRIC_INLIER_THRESHOLD,
         "geometric_verification": geometric,
+        "perceptual_hash_threshold": PERCEPTUAL_HASH_THRESHOLD,
         "near_threshold_margin": NEAR_THRESHOLD_MARGIN,
         "is_near_threshold": bool(best and not recognized and score >= IDENTITY_EMBEDDING_THRESHOLD - NEAR_THRESHOLD_MARGIN),
         "near_match_candidate": metadata if best and score >= IDENTITY_EMBEDDING_THRESHOLD - NEAR_THRESHOLD_MARGIN else None,
@@ -232,6 +242,78 @@ class ArtRecognitionPipeline:
         self.embeddings_path = self.paths.embeddings_path
         self.build_report_path = self.paths.build_report_path
         self.yolo_model_path = self.paths.data_dir / "models" / "painting_yolo_seg.pt"
+        self._hash_rows: list[dict[str, object]] | None = None
+
+    @staticmethod
+    def _unique_mapping_rows(mapping: list[dict[str, object]]) -> list[dict[str, object]]:
+        seen: set[object] = set()
+        rows: list[dict[str, object]] = []
+        for item in mapping:
+            painting_id = item.get("painting_id")
+            if painting_id in seen:
+                continue
+            seen.add(painting_id)
+            rows.append(item)
+        return rows
+
+    def _hash_matches(
+        self,
+        variant: dict[str, object],
+        mapping: list[dict[str, object]],
+    ) -> list[dict[str, object]]:
+        query_hash = perceptual_hash(variant["processed_bgr"])
+        if not query_hash:
+            return []
+
+        best_distance = 10**9
+        best_rows: list[dict[str, object]] = []
+        if self._hash_rows is None:
+            self._hash_rows = []
+            for row in self._unique_mapping_rows(mapping):
+                row_hash = row.get("perceptual_hash")
+                if not row_hash:
+                    image_bgr = cv2.imread(str(row.get("image_path")))
+                    row_hash = perceptual_hash(image_bgr) if image_bgr is not None else ""
+                enriched = dict(row)
+                enriched["perceptual_hash"] = row_hash
+                self._hash_rows.append(enriched)
+                distance = hash_distance(query_hash, str(row_hash))
+                if distance == 0:
+                    best_distance = 0
+                    best_rows = [enriched]
+                    break
+
+        if best_distance != 0:
+            for row in self._hash_rows:
+                row_hash = row.get("perceptual_hash")
+                distance = hash_distance(query_hash, str(row_hash))
+                if distance < best_distance:
+                    best_distance = distance
+                    best_rows = [row]
+                elif distance == best_distance:
+                    best_rows.append(row)
+
+        if best_distance > PERCEPTUAL_HASH_THRESHOLD:
+            return []
+
+        matches = []
+        for rank, row in enumerate(best_rows[:5], start=1):
+            matches.append(
+                {
+                    "rank": rank,
+                    "score": float(1.0 - best_distance / 64.0),
+                    "metadata": row,
+                    "hit_count": 1,
+                    "geometric_verification": {
+                        "method": "perceptual_hash",
+                        "distance": int(best_distance),
+                        "inliers": GEOMETRIC_INLIER_THRESHOLD,
+                        "matches": 1,
+                        "verified": True,
+                    },
+                }
+            )
+        return matches
 
     def build_index(
         self,
@@ -346,16 +428,25 @@ class ArtRecognitionPipeline:
             mapping_path=self.mapping_path,
             embeddings_path=self.embeddings_path,
         ).load()
-        embeddings = normalize_matrix(vector_db.load_embeddings())
         indexed_model = str(vector_db.mapping[0].get("embedding_model") or "") if vector_db.mapping else ""
         if indexed_model and indexed_model != embedding_model:
             raise RuntimeError(
                 f"The saved index was built with {indexed_model}. Rebuild it with {embedding_model} before querying."
             )
-        extractor = Dinov2EmbeddingExtractor(model_name=embedding_model)
 
         best_result: dict[str, object] | None = None
-        for variant in preprocess_query_image_variants_from_bgr(image_bgr):
+        query_variants = preprocess_query_image_variants_from_bgr(image_bgr)
+        for variant in query_variants:
+            hash_matches = self._hash_matches(variant, vector_db.mapping)
+            if hash_matches:
+                result = build_query_response(image_path=image_path, matches=hash_matches)
+                result["query_variant"] = variant["name"]
+                result["crop_confidence"] = variant["crop_confidence"]
+                return result
+
+        embeddings = normalize_matrix(vector_db.load_embeddings())
+        extractor = Dinov2EmbeddingExtractor(model_name=embedding_model)
+        for variant in query_variants:
             query_embedding = extractor.extract(variant["processed_rgb"])
             raw_matches = _matches_from_embeddings(query_embedding, embeddings, vector_db.mapping, top_k=top_k)
             candidates = aggregate_identity_matches(raw_matches, max_candidates=5)

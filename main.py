@@ -16,6 +16,7 @@ def main() -> None:
         print("  python main.py generate-yolo [options]")
         print("  python main.py train-cropper [options]")
         print("  python main.py export-manifest [options]")
+        print("  python main.py sync-processed [options]")
         print("  python main.py evaluate [options]")
         sys.exit(1)
 
@@ -32,10 +33,15 @@ def main() -> None:
         script = "scripts/train_cropper.py"
     elif command == "export-manifest":
         script = "scripts/export_index_manifest.py"
+    elif command == "sync-processed":
+        script = "scripts/sync_processed_images.py"
     elif command == "evaluate":
         script = "scripts/evaluate_models.py"
     else:
-        print("Unknown command. Use 'build-index', 'query', 'generate-yolo', 'train-cropper', 'export-manifest', or 'evaluate'.")
+        print(
+            "Unknown command. Use 'build-index', 'query', 'generate-yolo', "
+            "'train-cropper', 'export-manifest', 'sync-processed', or 'evaluate'."
+        )
         sys.exit(1)
 
     env = os.environ.copy()
