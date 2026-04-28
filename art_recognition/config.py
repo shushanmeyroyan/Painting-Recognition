@@ -53,5 +53,9 @@ class ProjectPaths:
         return self.data_dir / "style_classifier.pkl"
 
     @property
+    def style_genre_classifier_path(self) -> Path:
+        return self.data_dir / "style_genre_classifier.pkl"
+
+    @property
     def build_report_path(self) -> Path:
         return self.data_dir / "build_report.json"

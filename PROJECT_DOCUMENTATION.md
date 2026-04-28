@@ -75,6 +75,14 @@ Build Armenian + WikiArt identity index:
 python main.py build-index --embedding-model facebook/dinov2-base --augmentations 8 --include-wikiart --wikiart-limit 4500
 ```
 
+Train style and genre prediction from indexed WikiArt DINOv2 embeddings:
+
+```bash
+python main.py train-style-genre --source wikiart
+```
+
+This saves `data/style_genre_classifier.pkl`. It trains style from WikiArt folder labels and genre from available metadata/title keywords, then Streamlit uses it for recognized paintings with missing labels and for `not_found` uploads.
+
 Query an uploaded image:
 
 ```bash

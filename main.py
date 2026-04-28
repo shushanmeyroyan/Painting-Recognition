@@ -15,6 +15,7 @@ def main() -> None:
         print("  python main.py query <image_path> [options]")
         print("  python main.py generate-yolo [options]")
         print("  python main.py train-cropper [options]")
+        print("  python main.py train-style-genre [options]")
         print("  python main.py export-manifest [options]")
         print("  python main.py sync-processed [options]")
         print("  python main.py evaluate [options]")
@@ -31,6 +32,8 @@ def main() -> None:
         script = "scripts/generate_synthetic_yolo.py"
     elif command == "train-cropper":
         script = "scripts/train_cropper.py"
+    elif command == "train-style-genre":
+        script = "scripts/train_style_genre.py"
     elif command == "export-manifest":
         script = "scripts/export_index_manifest.py"
     elif command == "sync-processed":
@@ -40,7 +43,8 @@ def main() -> None:
     else:
         print(
             "Unknown command. Use 'build-index', 'query', 'generate-yolo', "
-            "'train-cropper', 'export-manifest', 'sync-processed', or 'evaluate'."
+            "'train-cropper', 'train-style-genre', 'export-manifest', "
+            "'sync-processed', or 'evaluate'."
         )
         sys.exit(1)
 

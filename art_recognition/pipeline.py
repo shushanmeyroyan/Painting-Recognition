@@ -25,6 +25,7 @@ from art_recognition.identity import (
     normalize_matrix,
     perceptual_hash,
 )
+from art_recognition.style_genre import StyleGenrePredictor, clean_label, infer_genre_label
 
 
 RECOGNITION_SCORE_THRESHOLD = IDENTITY_EMBEDDING_THRESHOLD
@@ -174,6 +175,9 @@ def build_query_response(
     predicted_style: str | None = None,
     predicted_style_confidence: float = 0.0,
     predicted_style_source: str | None = None,
+    inferred_genre: str | None = None,
+    inferred_genre_confidence: float = 0.0,
+    inferred_genre_source: str | None = None,
 ) -> dict[str, object]:
     best = matches[0] if matches else None
     metadata = best.get("metadata", {}) if best else {}
@@ -209,8 +213,9 @@ def build_query_response(
         "predicted_style": predicted_style,
         "predicted_style_confidence": predicted_style_confidence,
         "predicted_style_source": predicted_style_source,
-        "inferred_genre": None,
-        "inferred_genre_confidence": 0.0,
+        "inferred_genre": inferred_genre,
+        "inferred_genre_confidence": inferred_genre_confidence,
+        "inferred_genre_source": inferred_genre_source,
         "possible_artist": None,
         "possible_artist_confidence": 0.0,
         "similar_paintings": matches,
@@ -243,6 +248,58 @@ class ArtRecognitionPipeline:
         self.build_report_path = self.paths.build_report_path
         self.yolo_model_path = self.paths.data_dir / "models" / "painting_yolo_seg.pt"
         self._hash_rows: list[dict[str, object]] | None = None
+        self._style_genre_predictor: StyleGenrePredictor | None | bool = False
+
+    def _load_style_genre_predictor(self) -> StyleGenrePredictor | None:
+        if self._style_genre_predictor is False:
+            classifier_path = self.paths.style_genre_classifier_path
+            if not classifier_path.exists():
+                self._style_genre_predictor = None
+            else:
+                self._style_genre_predictor = StyleGenrePredictor.load(classifier_path)
+        return self._style_genre_predictor if isinstance(self._style_genre_predictor, StyleGenrePredictor) else None
+
+    def _style_genre_fields(
+        self,
+        embedding: np.ndarray | None,
+        metadata: dict[str, object] | None = None,
+    ) -> dict[str, object]:
+        metadata = metadata or {}
+        recorded_style = clean_label(metadata.get("style"))
+        recorded_genre = clean_label(metadata.get("genre"))
+        inferred_metadata_genre = infer_genre_label(metadata)
+        fields: dict[str, object] = {
+            "predicted_style": recorded_style,
+            "predicted_style_confidence": 1.0 if recorded_style else 0.0,
+            "predicted_style_source": "metadata" if recorded_style else None,
+            "inferred_genre": recorded_genre or inferred_metadata_genre,
+            "inferred_genre_confidence": 1.0 if recorded_genre else (0.65 if inferred_metadata_genre else 0.0),
+            "inferred_genre_source": "metadata" if recorded_genre else ("metadata_title_keywords" if inferred_metadata_genre else None),
+        }
+        if embedding is None:
+            return fields
+
+        predictor = self._load_style_genre_predictor()
+        if predictor is None:
+            return fields
+
+        style_prediction = predictor.predict_style(embedding)
+        if not fields["predicted_style"] or style_prediction.confidence > float(fields["predicted_style_confidence"]):
+            fields["predicted_style"] = style_prediction.label
+            fields["predicted_style_confidence"] = style_prediction.confidence
+            fields["predicted_style_source"] = style_prediction.source
+
+        genre_prediction = predictor.predict_genre(embedding)
+        if not fields["inferred_genre"] or genre_prediction.confidence > float(fields["inferred_genre_confidence"]):
+            fields["inferred_genre"] = genre_prediction.label
+            fields["inferred_genre_confidence"] = genre_prediction.confidence
+            fields["inferred_genre_source"] = genre_prediction.source
+        return fields
+
+    @staticmethod
+    def _apply_style_genre(result: dict[str, object], fields: dict[str, object]) -> dict[str, object]:
+        result.update(fields)
+        return result
 
     @staticmethod
     def _unique_mapping_rows(mapping: list[dict[str, object]]) -> list[dict[str, object]]:
@@ -436,16 +493,24 @@ class ArtRecognitionPipeline:
 
         best_result: dict[str, object] | None = None
         query_variants = preprocess_query_image_variants_from_bgr(image_bgr)
+        extractor: Dinov2EmbeddingExtractor | None = None
         for variant in query_variants:
             hash_matches = self._hash_matches(variant, vector_db.mapping)
             if hash_matches:
                 result = build_query_response(image_path=image_path, matches=hash_matches)
                 result["query_variant"] = variant["name"]
                 result["crop_confidence"] = variant["crop_confidence"]
-                return result
+                if extractor is None:
+                    extractor = Dinov2EmbeddingExtractor(model_name=embedding_model)
+                query_embedding = extractor.extract(variant["processed_rgb"])
+                return self._apply_style_genre(
+                    result,
+                    self._style_genre_fields(query_embedding, hash_matches[0].get("metadata", {})),
+                )
 
         embeddings = normalize_matrix(vector_db.load_embeddings())
-        extractor = Dinov2EmbeddingExtractor(model_name=embedding_model)
+        if extractor is None:
+            extractor = Dinov2EmbeddingExtractor(model_name=embedding_model)
         for variant in query_variants:
             query_embedding = extractor.extract(variant["processed_rgb"])
             raw_matches = _matches_from_embeddings(query_embedding, embeddings, vector_db.mapping, top_k=top_k)
@@ -467,6 +532,9 @@ class ArtRecognitionPipeline:
                 )
 
             result = build_query_response(image_path=image_path, matches=matches)
+            metadata = matches[0].get("metadata", {}) if matches and result["is_recognized"] else {}
+            style_genre_fields = self._style_genre_fields(query_embedding, metadata if isinstance(metadata, dict) else {})
+            result.update(style_genre_fields)
             result["query_variant"] = variant["name"]
             result["crop_confidence"] = variant["crop_confidence"]
             if result["is_recognized"]:
@@ -474,4 +542,9 @@ class ArtRecognitionPipeline:
             if best_result is None or result["recognition_score"] > best_result["recognition_score"]:
                 best_result = result
 
-        return best_result or build_query_response(image_path=image_path, matches=[])
+        if best_result is not None:
+            return best_result
+        return self._apply_style_genre(
+            build_query_response(image_path=image_path, matches=[]),
+            self._style_genre_fields(None),
+        )

@@ -45,6 +45,12 @@ Build Armenian + WikiArt identity index:
 python main.py build-index --embedding-model facebook/dinov2-base --augmentations 8 --include-wikiart --wikiart-limit 4500
 ```
 
+Train style and genre prediction:
+
+```bash
+python main.py train-style-genre --source wikiart
+```
+
 Query:
 
 ```bash
